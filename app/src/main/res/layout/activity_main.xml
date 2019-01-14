@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/regNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/null"
-        android:layout_alignBottom="@+id/regNameLabel"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="45dp"
@@ -38,5 +37,199 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="142dp"
         android:text="Class Year: " />
+
+    <TextView
+        android:id="@+id/regTagLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/regNameLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="226dp"
+        android:text="Tags: " />
+
+
+    <RadioButton
+        android:id="@+id/classyrbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/regClassLabel"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="-5dp"
+        android:layout_toEndOf="@+id/regClassLabel"
+        android:text="2022" />
+
+    <RadioButton
+        android:id="@+id/classyrbutton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/classyrbutton1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="203dp"
+        android:layout_marginEnd="0dp"
+        android:text="2020" />
+
+    <RadioButton
+        android:id="@+id/classyrbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/classyrbutton1"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="171dp"
+        android:text="2021" />
+
+    <RadioButton
+        android:id="@+id/classyrbutton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/classyrbutton1"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="57dp"
+        android:layout_marginRight="57dp"
+        android:text="2019" />
+
+    <RadioButton
+        android:id="@+id/classyrbutton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/classyrbutton1"
+        android:layout_alignEnd="@+id/classyrbutton4"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="15dp"
+        android:text="FP" />
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="206dp"
+        android:layout_height="106dp"
+        android:layout_alignStart="@+id/classyrbutton5"
+        android:layout_alignBottom="@+id/classyrbutton3"
+        android:layout_marginStart="-133dp"
+        android:layout_marginBottom="-13dp"
+        android:addStatesFromChildren="true" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regTagLabel"
+        android:layout_alignEnd="@+id/regEmailLabel"
+        android:layout_marginTop="-226dp"
+        android:text="free food" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignStart="@+id/checkBox"
+        android:text="coffee" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox2"
+        android:layout_alignEnd="@+id/regEmailLabel"
+        android:layout_marginTop="-2dp"
+        android:layout_marginEnd="17dp"
+        android:text="lecture" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/checkBox"
+        android:layout_toEndOf="@+id/regEmailLabel"
+        android:text="political event" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox"
+        android:layout_toEndOf="@+id/regEmailLabel" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox2"
+        android:layout_toEndOf="@+id/regEmailLabel"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regTagLabel"
+        android:layout_marginTop="-226dp"
+        android:layout_toEndOf="@+id/checkBox4"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox"
+        android:layout_toEndOf="@+id/checkBox4"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox2"
+        android:layout_toEndOf="@+id/checkBox4"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignEnd="@+id/checkBox4"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignEnd="@+id/regEmailLabel"
+        android:text="live music" />
+
+    <CheckBox
+        android:id="@+id/checkBox12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox3"
+        android:layout_toEndOf="@+id/checkBox4"
+        android:text="CheckBox" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_below="@+id/regNameLabel"
+        android:layout_alignStart="@+id/classyrbutton1"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
 
 </RelativeLayout>
