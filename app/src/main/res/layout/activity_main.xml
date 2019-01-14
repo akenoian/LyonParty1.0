@@ -10,8 +10,6 @@
         android:id="@+id/regNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/null"
-        android:layout_alignBottom="@+id/regNameLabel"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="45dp"
@@ -34,7 +32,6 @@
         android:id="@+id/regClassLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/regNameLabel"
         android:layout_alignParentTop="true"
         android:layout_marginTop="142dp"
         android:text="Class Year: " />
