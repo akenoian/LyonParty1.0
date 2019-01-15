@@ -28,12 +28,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        //open the postEvent screen
-        Intent intent = new Intent(this, SearchEvent.class);
-        //takes a string name and value
-        startActivity(intent);  //new UI
-
     }
 
     public boolean onDone(View view) {
@@ -43,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         getEmail();
 
         getClassYear();
+
+        //open the postEvent screen
+        Intent intent = new Intent(this, SearchEvent.class);
+        //takes a string name and value
+        startActivity(intent);  //new UI
 
         return true;
     }
