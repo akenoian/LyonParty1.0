@@ -50,6 +50,7 @@
         android:text="Tags: " />
 
     <RadioGroup
+        android:id="@+id/radioGroupClassYear"
         android:layout_width="232dp"
         android:layout_height="115dp"
         android:layout_alignTop="@+id/regClassLabel"
@@ -170,7 +171,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/regEmailLabel"
@@ -190,6 +191,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:layout_marginBottom="28dp"
+        android:onClick="onDone"
         android:text="Done" />
 
 
