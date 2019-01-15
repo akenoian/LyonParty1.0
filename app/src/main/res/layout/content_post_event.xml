@@ -22,7 +22,7 @@
         app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/postEventName"
+        android:id="@+id/textViewLabel1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView1"
@@ -33,7 +33,7 @@
         android:text="Event Name: " />
 
     <TextView
-        android:id="@+id/postEventName2"
+        android:id="@+id/textViewLabel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/imageView1"
@@ -48,7 +48,7 @@
         android:id="@+id/postEventName3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/postEventName2"
+        android:layout_alignTop="@+id/textViewLabel2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="111dp"
@@ -57,10 +57,10 @@
         android:text="Date:" />
 
     <TextView
-        android:id="@+id/postEventName4"
+        android:id="@+id/textViewLabel4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/postEventName2"
+        android:layout_alignTop="@+id/textViewLabel2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="245dp"
@@ -94,7 +94,7 @@
         android:id="@+id/editText3"
         android:layout_width="91dp"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/postEventName4"
+        android:layout_alignEnd="@+id/textViewLabel4"
         android:layout_alignParentTop="true"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="42dp"
@@ -102,10 +102,10 @@
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextEmail"
         android:layout_width="76dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/postEventName"
+        android:layout_alignStart="@+id/textViewLabel1"
         android:layout_alignParentTop="true"
         android:layout_marginStart="176dp"
         android:layout_marginTop="69dp"
@@ -135,8 +135,8 @@
         android:id="@+id/editText6"
         android:layout_width="303dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText5"
-        android:layout_alignEnd="@+id/postEventName4"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_alignEnd="@+id/textViewLabel4"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="-82dp"
         android:ems="10"
