@@ -28,25 +28,22 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
         Event event = new Event(time, "Event place", "event host", tags, "event name" );
         EventNotice demo = new EventNotice(this, event);
-
         // data to populate the RecyclerView with
-        ArrayList<String> animalNames = new ArrayList<>();
-        animalNames.add("Horse");
-        animalNames.add("Cow");
-        animalNames.add("Camel");
-        animalNames.add("Sheep");
-        animalNames.add("Goat");
+        ArrayList<EventNotice> notices = new ArrayList<>();
+        notices.add(demo);
+
 
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.eventListView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MyRecyclerViewAdapter(this, animalNames);
+        adapter = new MyRecyclerViewAdapter(this, notices);
         adapter.setClickListener(this);
         recyclerView.setAdapter(adapter);
 
     }
     @Override
     public void onItemClick(View view, int position) {
+        //add an intent to open another activity that's just an xml of the event information
         Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }
