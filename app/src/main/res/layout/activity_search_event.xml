@@ -45,6 +45,7 @@
         android:text="Post Events" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/eventListView"
         android:layout_width="358dp"
         android:layout_height="417dp"
         android:layout_alignParentStart="true"
