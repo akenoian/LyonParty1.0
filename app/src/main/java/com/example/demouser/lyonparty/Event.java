@@ -6,6 +6,8 @@ import java.sql.Time;
  * This class holds all of the data for an event. It has no GUI components, but rather other
  * GUI components know about their associated events, and can access information from this
  * primary data object.
+ * @author Jaemarie Solyst
+ * @version 1/14/18
  */
 public class Event {
 
