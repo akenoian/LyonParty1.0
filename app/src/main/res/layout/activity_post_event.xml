@@ -140,4 +140,43 @@
         android:ems="10"
         android:inputType="textMultiLine" />
 
+    <ToggleButton
+        android:id="@+id/toggleButtonTAG1"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="225dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/editText3"
+        android:background="@drawable/ic_launcher_background"
+        android:text="free @string/free_coffee"
+        android:textOff="free coffee"
+        android:textOn="FREE COFFEE" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonTAG2"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="293dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toStartOf="@+id/editText3"
+        android:background="@drawable/ic_launcher_background"
+        android:text="free @string/free_food"
+        android:textOff="free food"
+        android:textOn="FREE FOOD" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonTAG3"
+        android:layout_width="93dp"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="361dp"
+        android:layout_marginEnd="18dp"
+        android:layout_toStartOf="@+id/editText3"
+        android:background="@drawable/ic_launcher_background"
+        android:text="live @string/live_music"
+        android:textOff="live music"
+        android:textOn="LIVE MUSIC" />
+
 </RelativeLayout>
