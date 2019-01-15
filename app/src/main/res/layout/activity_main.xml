@@ -15,8 +15,7 @@
         android:layout_marginLeft="36dp"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="0dp"
-        android:text="@string/name"
-        android:layout_marginStart="36dp" />
+        android:text="Name: " />
 
     <TextView
         android:id="@+id/regEmailLabel"
@@ -28,7 +27,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="92dp"
-        android:text="@string/school_email" />
+        android:text="School Email: " />
 
     <TextView
         android:id="@+id/regClassLabel"
@@ -38,7 +37,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="35dp"
         android:layout_marginTop="134dp"
-        android:text="@string/class_year" />
+        android:text="Class Year: " />
 
     <TextView
         android:id="@+id/regTagLabel"
@@ -48,7 +47,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-2dp"
         android:layout_marginBottom="245dp"
-        android:text="@string/tags" />
+        android:text="Tags: " />
 
     <RadioGroup
         android:layout_width="232dp"
@@ -65,35 +64,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/_2022" />
+            android:text="2022" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/_2021" />
+            android:text="2021" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/_2020" />
+            android:text="2020" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/_2019" />
+            android:text="2019" />
 
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/fp" />
+            android:text="FP" />
     </RadioGroup>
 
     <View
@@ -112,7 +111,7 @@
         android:layout_alignStart="@+id/regClassLabel"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="209dp"
-        android:text="@string/free_food" />
+        android:text="free food" />
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -122,7 +121,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginBottom="177dp"
-        android:text="@string/free_coffee" />
+        android:text="free coffee" />
 
     <CheckBox
         android:id="@+id/checkBox3"
@@ -132,7 +131,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="1dp"
         android:layout_marginBottom="143dp"
-        android:text="@string/drinks" />
+        android:text="drinks" />
 
     <CheckBox
         android:id="@+id/checkBox4"
@@ -141,7 +140,7 @@
         android:layout_below="@+id/checkBox3"
         android:layout_alignStart="@+id/regNameLabel"
         android:layout_marginTop="-143dp"
-        android:text="@string/live_music" />
+        android:text="live music" />
 
     <CheckBox
         android:id="@+id/checkBox5"
@@ -149,7 +148,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBox4"
         android:layout_alignStart="@+id/regClassLabel"
-        android:text="@string/lecture" />
+        android:text="lecture" />
 
     <CheckBox
         android:id="@+id/checkBox6"
@@ -157,7 +156,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBox5"
         android:layout_alignStart="@+id/regClassLabel"
-        android:text="@string/political_event" />
+        android:text="political event" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -168,8 +167,7 @@
         android:layout_marginBottom="-5dp"
         android:layout_toEndOf="@+id/regClassLabel"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:importantForAutofill="no" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/editText4"
@@ -180,8 +178,7 @@
         android:layout_marginBottom="-9dp"
         android:layout_toEndOf="@+id/checkBox2"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:importantForAutofill="no" />
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/regDoneButton"
@@ -193,7 +190,7 @@
         android:layout_marginEnd="41dp"
         android:layout_marginRight="41dp"
         android:layout_marginBottom="28dp"
-        android:text="@string/done" />
+        android:text="Done" />
 
 
 </RelativeLayout>
