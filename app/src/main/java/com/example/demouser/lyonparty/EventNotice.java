@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * EventNotice is the GUI representation of an event that will be on a list displayed on the app.
  * @author Jaemarie Solyst
- * @version 1/14/18
+ * @version 1/14/19
  */
 public class EventNotice extends android.support.v7.widget.AppCompatTextView {
     //associated event

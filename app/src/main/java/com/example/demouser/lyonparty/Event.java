@@ -1,13 +1,14 @@
 package com.example.demouser.lyonparty;
 
 import java.sql.Time;
+import java.util.List;
 
 /**
  * This class holds all of the data for an event. It has no GUI components, but rather other
  * GUI components know about their associated events, and can access information from this
  * primary data object.
  * @author Jaemarie Solyst
- * @version 1/14/18
+ * @version 1/14/19
  */
 public class Event {
 
@@ -15,7 +16,7 @@ public class Event {
     private String place;
     private String host;
     private String name;
-    private String[] tags;
+    private List<String> tags;
     private Time time;
 
     /**
@@ -26,7 +27,7 @@ public class Event {
      * @param tags what the tags are of the event
      * @param name what the event is called
      */
-    public Event(Time time, String place, String host, String[] tags, String name){
+    public Event(Time time, String place, String host, List<String> tags, String name){
         // save the params as global
         this.time = time;
         this.place = place;
@@ -72,7 +73,7 @@ public class Event {
      * @param tagToRemove
      */
     public void removeTag(String tagToRemove){
-        this.name = tagToRemove;
+        tags.remove(tagToRemove);
     }
 
     /**
@@ -80,7 +81,7 @@ public class Event {
      * @param newTag
      */
     public void addTag(String newTag){
-        this.name = newTag;
+        tags.add(newTag);
     }
 
     /**
@@ -119,7 +120,7 @@ public class Event {
      * get the tags as a string array
      * @return tags of the event as a String array
      */
-    public String[] getTags() {
+    public List<String> getTags() {
         return tags;
     }
 }
