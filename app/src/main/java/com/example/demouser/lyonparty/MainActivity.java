@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Map<String, String> userInfo = new HashMap<>();
     private RadioGroup radioGroup;
     private RadioButton radioButton;
+    private List<String> selectedTags;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
         getClassYear();
 
+        getCheckedTags();
+
         //open the postEvent screen
-        Intent intent = new Intent(this, SearchEvent.class);
+        //Intent intent = new Intent(this, SearchEvent.class);
         //takes a string name and value
-        startActivity(intent);  //new UI
+        //startActivity(intent);  //new UI
 
         return true;
     }
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         String name = edTextName.getText().toString();
 
-        userInfo.put("name", name);
+        userInfo.put("name", name); // put the name in the hashmap containing user info
 
         Log.i(TAG, "Inputted name: " + name);
 
@@ -70,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         String email = edTextEmail.getText().toString();
 
-        userInfo.put("Email", email);
+        userInfo.put("Email", email); // put the email in the hashmap containing user info
 
         Log.i(TAG, "Inputted email: " + email);
 
@@ -89,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
         String year = radioButton.getText().toString();
 
-        userInfo.put("Class Year", year);
+        userInfo.put("Class Year", year); // put the year in the hashmap containing user info
 
         Log.i(TAG, "Inputted class year: " + year);
 
@@ -97,8 +102,40 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public List<String> getCheckedTags() {
 
+        selectedTags = new ArrayList<>();
+        List<CheckBox> items = new ArrayList<CheckBox>();
 
+        CheckBox foodCheckBox = (CheckBox) findViewById(R.id.checkBox1);
+        items.add(foodCheckBox);
 
+        CheckBox coffeeCheckBox = (CheckBox) findViewById(R.id.checkBox2);
+        items.add(coffeeCheckBox);
+
+        CheckBox drinksCheckBox = (CheckBox) findViewById(R.id.checkBox3);
+        items.add(drinksCheckBox);
+
+        CheckBox musicCheckBox = (CheckBox) findViewById(R.id.checkBox4);
+        items.add(musicCheckBox);
+
+        CheckBox lectureCheckBox = (CheckBox) findViewById(R.id.checkBox5);
+        items.add(lectureCheckBox);
+
+        CheckBox politicalCheckBox = (CheckBox) findViewById(R.id.checkBox6);
+        items.add(politicalCheckBox);
+
+        String text;
+
+        for (CheckBox item : items) {
+            if (item.isChecked()) {
+                text = item.getText().toString();
+                selectedTags.add(text);
+            }
+        }
+
+        Log.i(TAG, "check selected tags: " + selectedTags);
+        return selectedTags;
+    }
 
 }
