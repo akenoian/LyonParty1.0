@@ -49,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
         getCheckedTags();
 
         //open the postEvent screen
-        //Intent intent = new Intent(this, SearchEvent.class);
+        Intent intent = new Intent(this, SearchEvent.class);
         //takes a string name and value
-        //startActivity(intent);  //new UI
+        startActivity(intent);  //new UI
 
         return true;
     }

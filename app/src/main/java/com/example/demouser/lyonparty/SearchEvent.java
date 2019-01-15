@@ -45,5 +45,7 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
     public void onItemClick(View view, int position) {
         //add an intent to open another activity that's just an xml of the event information
         Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+
+
     }
 }
