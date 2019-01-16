@@ -10,7 +10,7 @@
     tools:showIn="@layout/activity_post_event">
 
     <ImageView
-        android:id="@+id/imageView1"
+        android:id="@+id/eventPicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -25,18 +25,18 @@
         android:id="@+id/textViewLabel1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView1"
+        android:layout_alignTop="@+id/eventPicture"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="107dp"
         android:layout_marginLeft="107dp"
-        android:text="Event Name: " />
+        android:text="Event Name:" />
 
     <TextView
         android:id="@+id/textViewLabel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView1"
+        android:layout_alignTop="@+id/eventPicture"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="111dp"
@@ -102,7 +102,7 @@
         android:inputType="date" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/timeText"
         android:layout_width="76dp"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textViewLabel1"
@@ -116,7 +116,7 @@
         android:id="@+id/postEventName5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView1"
+        android:layout_alignStart="@+id/eventPicture"
         android:layout_alignParentTop="true"
         android:layout_marginTop="137dp"
         android:text="Info: " />
@@ -125,7 +125,7 @@
         android:id="@+id/postEventName6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView1"
+        android:layout_alignStart="@+id/eventPicture"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="182dp"
@@ -135,7 +135,7 @@
         android:id="@+id/editText6"
         android:layout_width="303dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextEmail"
+        android:layout_below="@+id/timeText"
         android:layout_alignEnd="@+id/textViewLabel4"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="-82dp"
@@ -149,7 +149,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-68dp"
         android:layout_marginBottom="257dp"
-        android:layout_toEndOf="@+id/imageView1"
+        android:layout_toEndOf="@+id/eventPicture"
         android:text="ToggleButton"
         android:textOff="free food"
         android:textOn="FREE FOOD" />
@@ -161,7 +161,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-73dp"
         android:layout_marginBottom="131dp"
-        android:layout_toEndOf="@+id/imageView1"
+        android:layout_toEndOf="@+id/eventPicture"
         android:text="ToggleButton"
         android:textOff="drinks"
         android:textOn="DRINKS" />
@@ -173,7 +173,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-69dp"
         android:layout_marginBottom="197dp"
-        android:layout_toEndOf="@+id/imageView1"
+        android:layout_toEndOf="@+id/eventPicture"
         android:text="ToggleButton"
         android:textOff="free coffee"
         android:textOn="FREE COFFEE" />
@@ -185,7 +185,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-69dp"
         android:layout_marginBottom="67dp"
-        android:layout_toEndOf="@+id/imageView1"
+        android:layout_toEndOf="@+id/eventPicture"
         android:text="ToggleButton"
         android:textOff="live music"
         android:textOn="LIVE MUSIC" />
@@ -197,7 +197,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="29dp"
         android:layout_marginBottom="256dp"
-        android:layout_toEndOf="@+id/imageView1"
+        android:layout_toEndOf="@+id/eventPicture"
         android:text="ToggleButton"
         android:textOff="lecture"
         android:textOn="LECTURE" />
@@ -209,7 +209,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="29dp"
         android:layout_marginBottom="197dp"
-        android:layout_toEndOf="@+id/imageView1"
+        android:layout_toEndOf="@+id/eventPicture"
         android:text="ToggleButton"
         android:textOff="political event"
         android:textOn="POLITICAL EVENT" />

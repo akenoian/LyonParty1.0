@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import java.sql.Time;
 import java.util.ArrayList;
@@ -126,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String getEmail() {
 
-        EditText edTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        EditText edTextEmail = (EditText) findViewById(R.id.timeText);
 
         edTextEmail.setInputType(InputType.TYPE_CLASS_TEXT);
 

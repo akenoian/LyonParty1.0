@@ -18,6 +18,10 @@ public class EventPage extends AppCompatActivity {
      */
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_post_event);
+        setContentView(R.layout.activity_event_page);
+    }
+
+    public void displayEventInfo (Event event){
+
     }
 }

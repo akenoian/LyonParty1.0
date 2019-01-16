@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/eventPicture"
+        android:layout_width="136dp"
+        android:layout_height="128dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="119dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginTop="31dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[8]" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="284dp"
+        android:layout_height="190dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="230dp"
+        android:text="information about event goes here" />
+
+    <TextView
+        android:id="@+id/textViewLabel6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="444dp"
+        android:text="Tags:" />
+
+    <TextView
+        android:id="@+id/eventNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="9dp"
+        android:text="name of event here" />
+
+    <TextView
+        android:id="@+id/hostInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="168dp"
+        android:text="host here" />
+
+    <TextView
+        android:id="@+id/placeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="190dp"
+        android:text="place here" />
+
+    <TextView
+        android:id="@+id/hostInfo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="168dp"
+        android:text="Host:" />
+
+    <TextView
+        android:id="@+id/timelabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="169dp"
+        android:text="Time:" />
+
+    <TextView
+        android:id="@+id/timeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="209dp"
+        android:layout_marginLeft="209dp"
+        android:layout_marginTop="169dp"
+        android:text="date here" />
+
+    <TextView
+        android:id="@+id/hostInfo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="190dp"
+        android:text="Place:" />
+
+    <TextView
+        android:id="@+id/tagsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewLabel6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="111dp"
+        android:layout_marginLeft="111dp"
+        android:text="tags go here" />
+
+</RelativeLayout>
