@@ -84,44 +84,44 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
     /**
      * BELOW HERE IS HARDCODED EVENT INFORMATION FOR DEMONSTRATION PURPOSES
      */
-    public void createExampleEvents(){
+    public void createExampleEvents() {
         // example times
         /**
-        Time time1 = new Time(01,1,00);
-        Time time2 = new Time(03, 49, 00);
-        Time time3 = new Time(10, 30, 00);
+         Time time1 = new Time(01,1,00);
+         Time time2 = new Time(03, 49, 00);
+         Time time3 = new Time(10, 30, 00);
 
-        // example tags
-        ArrayList<String> tags1 = new ArrayList<>();
-        ArrayList<String> tags2 = new ArrayList<>();
-        ArrayList<String> tags3 = new ArrayList<>();
-
-
-        tags1.add("free food");
-        tags1. add("wild part");
-
-        // Example 1: Mary's Party
-        exampleEv1 = new Event(time1, "Rockies 304", "Mary Lyon", tags1, "Mary's Wild Graduation" );
-        EventNotice notice1 = new EventNotice(this, exampleEv1);
+         // example tags
+         ArrayList<String> tags1 = new ArrayList<>();
+         ArrayList<String> tags2 = new ArrayList<>();
+         ArrayList<String> tags3 = new ArrayList<>();
 
 
-        // Populate the recycler view with demo example events
-        ArrayList<EventNotice> notices = new ArrayList<>();
-        notices.add(notice1);
-        */
+         tags1.add("free food");
+         tags1. add("wild part");
+
+         // Example 1: Mary's Party
+         exampleEv1 = new Event(time1, "Rockies 304", "Mary Lyon", tags1, "Mary's Wild Graduation" );
+         EventNotice notice1 = new EventNotice(this, exampleEv1);
+
+
+         // Populate the recycler view with demo example events
+         ArrayList<EventNotice> notices = new ArrayList<>();
+         notices.add(notice1);
+         */
 
         /**
-        // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.eventListView);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new MyRecyclerViewAdapter(this, notices);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
+         // set up the RecyclerView
+         RecyclerView recyclerView = findViewById(R.id.eventListView);
+         recyclerView.setLayoutManager(layoutManager);
+         adapter = new MyRecyclerViewAdapter(this, notices);
+         adapter.setClickListener(this);
+         recyclerView.setAdapter(adapter);
 
-        // create division for events
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
-                layoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
+         // create division for events
+         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+         layoutManager.getOrientation());
+         recyclerView.addItemDecoration(dividerItemDecoration);
          */
 
     }
