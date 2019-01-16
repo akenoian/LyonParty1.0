@@ -21,10 +21,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static final String TAG = "LyonPartyApp";
-    private Map<String, String> userInfo = new HashMap<>();
-    private RadioGroup radioGroup;
+    private Map<String, String> userInfo = new HashMap<>(); // holds the name, email, and class year of the user
+    private RadioGroup radioGroup; // group of buttons that provide choices for class year
     private RadioButton radioButton;
-    private List<String> selectedTags;
+    public List<String> selectedTags; // will hold the tags selected by user at registration
+    public List<String> allTags = new ArrayList<>(); // holds all the tags provided to the user upon registration
+
+    // hashmap that maps the tags to an array list of their coresponding events (one event can be listed under multiple tags)
+    public Map<String, List<Event>> taggedEvents = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +37,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method is called when the Done button is clicked.
+     * @param view
+     * @return
+     */
     public boolean onDone(View view) {
 
+        // retrieve the information that the user has submitted
         getNameText();
-
         getEmail();
-
         getClassYear();
-
         getCheckedTags();
 
         //open the postEvent screen
@@ -127,15 +134,27 @@ public class MainActivity extends AppCompatActivity {
 
         String text;
 
-        for (CheckBox item : items) {
-            if (item.isChecked()) {
-                text = item.getText().toString();
-                selectedTags.add(text);
+        for (CheckBox item : items) { // walk through all the tag check boxes
+            text = item.getText().toString(); // retrieve their text data
+            allTags.add(text); // add it to the allTags array list
+            if (item.isChecked()) { // only if it is checked when the user submits
+                selectedTags.add(text); // add it to the selected tags array list
             }
         }
 
         Log.i(TAG, "check selected tags: " + selectedTags);
         return selectedTags;
+    }
+
+    /**
+     * Build the hash map that maps tags to a list of events.
+     */
+    public void createTagHashMap() {
+
+        for (int i = 0; i < allTags.size(); i++) {
+            taggedEvents.put(allTags.get(i), new ArrayList<Event>());
+        }
+
     }
 
 }
