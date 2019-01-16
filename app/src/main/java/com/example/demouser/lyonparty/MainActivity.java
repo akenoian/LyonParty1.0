@@ -24,11 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private Map<String, String> userInfo = new HashMap<>(); // holds the name, email, and class year of the user
     private RadioGroup radioGroup; // group of buttons that provide choices for class year
     private RadioButton radioButton;
-    public List<String> selectedTags; // will hold the tags selected by user at registration
+    public static List<String> selectedTags; // will hold the tags selected by user at registration
     public List<String> allTags = new ArrayList<>(); // holds all the tags provided to the user upon registration
 
     // hashmap that maps the tags to an array list of their coresponding events (one event can be listed under multiple tags)
-    public Map<String, List<Event>> taggedEvents = new HashMap<>();
+    public static Map<String, List<Event>> taggedEvents = new HashMap<>();
     private List<Event> allEvents = new ArrayList<>();
 
     Time time = new Time(1,1,1);
