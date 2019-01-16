@@ -28,8 +28,8 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         Time time = new Time(1,1,1);
         ArrayList<String> tags = new ArrayList<>();
         tags.add("free food");
-
         Event event = new Event(time, "Event place", "event host", tags, "event name" );
+
         EventNotice demo = new EventNotice(this, event);
         // data to populate the RecyclerView with
         ArrayList<EventNotice> notices = new ArrayList<>();
