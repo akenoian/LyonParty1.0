@@ -1,6 +1,11 @@
 package com.example.demouser.lyonparty;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -10,7 +15,7 @@ import java.util.List;
  * @author Jaemarie Solyst
  * @version 1/14/19
  */
-public class Event {
+public class Event implements Parcelable {
 
     // event information that can be changed or accessed later
     private String place;
@@ -123,4 +128,62 @@ public class Event {
     public List<String> getTags() {
         return tags;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    /**
+     * BELOW HERE MAKES THE EVENT CLASS PARCEABLE
+     */
+
+    /**
+     * Store event data to a parcel object. More information here:
+     * https://en.proft.me/2017/02/28/pass-object-between-activities-android-parcelable/
+     * @param dest
+     * @param flags
+     */
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(place);
+        dest.writeString(host);
+        dest.writeString(name);
+        dest.writeStringList(tags);
+        dest.writeString(time.toString());
+    }
+
+    /**
+     * Retrieving Movie data from Parcel object
+     * This constructor is invoked by the method createFromParcel(Parcel source) of
+     * the object CREATOR
+     **/
+    private Event(Parcel in){
+        // get global vars of an event
+        this.place = in.readString();
+        this.host = in.readString();
+        this.name = in.readString();
+        this.tags = in.createStringArrayList();
+
+        // Get the time as a string first
+        String timeString = in.readString();
+        //convert String to time
+        this.time = java.sql.Time.valueOf(timeString);
+    }
+
+    /**
+     * ???
+     * https://en.proft.me/2017/02/28/pass-object-between-activities-android-parcelable/
+     */
+    public static final Parcelable.Creator<Event> CREATOR = new Parcelable.Creator<Event>() {
+        @Override
+        public Event createFromParcel(Parcel source) {
+            return new Event(source);
+        }
+
+        @Override
+        public Event[] newArray(int size) {
+            return new Event[size];
+        }
+    };
 }

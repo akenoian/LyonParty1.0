@@ -19,36 +19,20 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
     private MyRecyclerViewAdapter adapter;
     private LinearLayoutManager layoutManager;
+    private Event exampleEv1;
+    private Event exampleEv2;
+    private Event exampleEv3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_event);
 
-        Time time = new Time(1,1,1);
-        ArrayList<String> tags = new ArrayList<>();
-        tags.add("free food");
-
-        Event event = new Event(time, "Event place", "event host", tags, "event name" );
-        EventNotice demo = new EventNotice(this, event);
-        // data to populate the RecyclerView with
-        ArrayList<EventNotice> notices = new ArrayList<>();
-        notices.add(demo);
-
         // instantiate layout manager
         layoutManager = new LinearLayoutManager(this);
 
-        // set up the RecyclerView
-        RecyclerView recyclerView = findViewById(R.id.eventListView);
-        recyclerView.setLayoutManager(layoutManager);
-        adapter = new MyRecyclerViewAdapter(this, notices);
-        adapter.setClickListener(this);
-        recyclerView.setAdapter(adapter);
-
-        // create division for events
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
-                layoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
+        // Create example events
+        createExampleEvents();
 
     }
 
@@ -62,9 +46,48 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         Event clickedEvent = clickedNotice.getEvent();
         //EventPage page = new EventPage(this, clickedEvent);
         Intent openEventPageIntent = new Intent(this, EventPage.class);
-
+        openEventPageIntent.putExtra("event", exampleEv1);
         startActivity(openEventPageIntent);
 
+    }
 
+    /**
+     * BELOW HERE IS HARDCODED EVENT INFORMATION FOR DEMONSTRATION PURPOSES
+     */
+    public void createExampleEvents(){
+        // example times
+        Time time1 = new Time(01,1,00);
+        Time time2 = new Time(03, 49, 00);
+        Time time3 = new Time(10, 30, 00);
+
+        // example tags
+        ArrayList<String> tags1 = new ArrayList<>();
+        ArrayList<String> tags2 = new ArrayList<>();
+        ArrayList<String> tags3 = new ArrayList<>();
+
+
+        tags1.add("free food");
+        tags1. add("wild part");
+
+        // Example 1: Mary's Party
+        exampleEv1 = new Event(time1, "Rockies 304", "Mary Lyon", tags1, "Mary's Wild Graduation" );
+        EventNotice notice1 = new EventNotice(this, exampleEv1);
+
+
+        // Populate the recycler view with demo example events
+        ArrayList<EventNotice> notices = new ArrayList<>();
+        notices.add(notice1);
+
+        // set up the RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.eventListView);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new MyRecyclerViewAdapter(this, notices);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+
+        // create division for events
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                layoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
     }
 }
