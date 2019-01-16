@@ -30,10 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
     // hashmap that maps the tags to an array list of their coresponding events (one event can be listed under multiple tags)
     public Map<String, List<Event>> taggedEvents = new HashMap<>();
-    public List<String> selectedTags;
 
     Time time = new Time(1,1,1);
-    ArrayList<String> theTags = new ArrayList<>();  //the list of hard coded tags
 
     ArrayList<String> tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
     ArrayList<String> tagsdemo2 = new ArrayList<>();
@@ -47,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createTags();   //fill theTags arraylist
         createEvent();   //fill each list of the events bc they're hard coded for now
+
     }
 
     /**
@@ -57,37 +55,27 @@ public class MainActivity extends AppCompatActivity {
      */
     private void createEvent() {
 
-        for (int i=0;i<theTags.size();i++) {    //only list with all tags
-            tagsdemo1.add(theTags.get(i));      //should be in every event notice list
+        for (int i=0;i<allTags.size();i++) {    //only list with all tags
+            tagsdemo1.add(allTags.get(i));      //should be in every event notice list
         }
 
-        tagsdemo2.add(theTags.get(1));
-        tagsdemo2.add(theTags.get(0));
+        tagsdemo2.add(allTags.get(1));
+        tagsdemo2.add(allTags.get(0));
 
-        tagsdemo3.add(theTags.get(2));
-        tagsdemo3.add(theTags.get(4));
+        tagsdemo3.add(allTags.get(2));
+        tagsdemo3.add(allTags.get(4));
 
-        tagsdemo4.add(theTags.get(3));
+        tagsdemo4.add(allTags.get(3));
 
-        tagsdemo5.add(theTags.get(4));
+        tagsdemo5.add(allTags.get(4));
 
         Event eventdemo1 = new Event(time, "Event place1", "event host1", tagsdemo1, "event name1" );
         Event eventdemo2 = new Event(time, "Event place2", "event host2", tagsdemo2, "event name2" );
         Event eventdemo3 = new Event(time, "Event place3", "event host3", tagsdemo3, "event name3" );
         Event eventdemo4 = new Event(time, "Event place4", "event host4", tagsdemo4, "event name4" );
         Event eventdemo5 = new Event(time, "Event place5", "event host5", tagsdemo5, "event name5" );
+        
 
-    }
-
-    /**
-     * method to hard code all possible tags into an array list
-     */
-    private void createTags (){
-        theTags.add("free food");
-        theTags.add("free coffee");
-        theTags.add("drinks");
-        theTags.add("live music");
-        theTags.add("political event");
     }
 
     /**
@@ -198,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
+        createTagHashMap(); //make the hashmap
         Log.i(TAG, "check selected tags: " + selectedTags);
         return selectedTags;
     }
