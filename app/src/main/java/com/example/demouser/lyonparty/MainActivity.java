@@ -25,16 +25,17 @@ public class MainActivity extends AppCompatActivity {
     private Map<String, String> userInfo = new HashMap<>();
     private RadioGroup radioGroup;
     private RadioButton radioButton;
-    private List<String> selectedTags;
+    public List<String> selectedTags;
 
     Time time = new Time(1,1,1);
     ArrayList<String> theTags = new ArrayList<>();  //the list of hard coded tags
 
-    ArrayList<String> tagsdemo1 = new ArrayList<>();
+    ArrayList<String> tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
     ArrayList<String> tagsdemo2 = new ArrayList<>();
     ArrayList<String> tagsdemo3 = new ArrayList<>();
     ArrayList<String> tagsdemo4 = new ArrayList<>();
     ArrayList<String> tagsdemo5 = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
