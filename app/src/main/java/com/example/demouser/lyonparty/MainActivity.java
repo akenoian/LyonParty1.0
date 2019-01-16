@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     // hashmap that maps the tags to an array list of their coresponding events (one event can be listed under multiple tags)
     public Map<String, List<Event>> taggedEvents = new HashMap<>();
+    private List<Event> allEvents = new ArrayList<>();
 
     Time time = new Time(1,1,1);
 
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createEvent();   //fill each list of the events bc they're hard coded for now
 
     }
 
@@ -67,14 +67,20 @@ public class MainActivity extends AppCompatActivity {
 
         tagsdemo4.add(allTags.get(3));
 
-        tagsdemo5.add(allTags.get(4));
+        tagsdemo5.add(allTags.get(5));
 
         Event eventdemo1 = new Event(time, "Event place1", "event host1", tagsdemo1, "event name1" );
+        allEvents.add(eventdemo1);
         Event eventdemo2 = new Event(time, "Event place2", "event host2", tagsdemo2, "event name2" );
+        allEvents.add(eventdemo2);
         Event eventdemo3 = new Event(time, "Event place3", "event host3", tagsdemo3, "event name3" );
+        allEvents.add(eventdemo3);
         Event eventdemo4 = new Event(time, "Event place4", "event host4", tagsdemo4, "event name4" );
+        allEvents.add(eventdemo4);
         Event eventdemo5 = new Event(time, "Event place5", "event host5", tagsdemo5, "event name5" );
-        
+        allEvents.add(eventdemo5);
+
+
 
     }
 
@@ -195,9 +201,22 @@ public class MainActivity extends AppCompatActivity {
      * Build the hash map that maps tags to a list of events.
      */
     public void createTagHashMap() {
-
+        createEvent();   //fill each list of the events bc they're hard coded for now
+        //puts the keys in (tags)
         for (int i = 0; i < allTags.size(); i++) {
             taggedEvents.put(allTags.get(i), new ArrayList<Event>());
+        }
+        //walk through all the possible events
+        for (int i = 0; i<allEvents.size(); i++){
+            List<String> eventTags = allEvents.get(i).getTags();    //make a local list to hold event tags
+            for (int j = 0; j<eventTags.size(); j++) {   //walk through them
+                taggedEvents.get(eventTags.get(j)).add(allEvents.get(i));  //add event to hashmap at value that matches key/tag
+            }
+            Log.i("test", "hashmap: " + taggedEvents.get("free food").toString());
+        }
+
+        for (Map.Entry<String, List<Event>> entry : taggedEvents.entrySet()) {
+            Log.i("test", "key: " + entry.getKey() + "values: " + entry.getValue());
         }
 
     }
