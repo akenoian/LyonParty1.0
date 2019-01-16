@@ -27,6 +27,10 @@
 
         <activity android:name=".SearchEvent"
             android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".EventPage"
+            android:parentActivityName=".SearchEvent">
+        </activity>
     </application>
 
 

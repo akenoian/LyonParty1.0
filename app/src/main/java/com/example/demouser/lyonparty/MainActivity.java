@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //createEvent();   //fill each list of the events bc they're hard coded for now
 
     }
 
@@ -114,11 +115,16 @@ public class MainActivity extends AppCompatActivity {
 
         edTextName.setInputType(InputType.TYPE_CLASS_TEXT);
 
-        String name = edTextName.getText().toString();
+        String name = "";
 
-        userInfo.put("name", name); // put the name in the hashmap containing user info
+        if (edTextName != null) { // make sure info was added before retreiving anything
 
-        Log.i(TAG, "Inputted name: " + name);
+            name = edTextName.getText().toString();
+
+            userInfo.put("Name", name); // put the name in the hashmap containing user info
+
+            Log.i(TAG, "Inputted name: " + name);
+        }
 
         return name;
 
@@ -130,11 +136,16 @@ public class MainActivity extends AppCompatActivity {
 
         edTextEmail.setInputType(InputType.TYPE_CLASS_TEXT);
 
-        String email = edTextEmail.getText().toString();
+        String email = "";
 
-        userInfo.put("Email", email); // put the email in the hashmap containing user info
+        if (edTextEmail != null) { // make sure info was added before retreiving anything
 
-        Log.i(TAG, "Inputted email: " + email);
+            email = edTextEmail.getText().toString();
+
+            userInfo.put("Email", email); // put the email in the hashmap containing user info
+
+            Log.i(TAG, "Inputted email: " + email);
+        }
 
         return email;
 
@@ -146,14 +157,21 @@ public class MainActivity extends AppCompatActivity {
 
         // get selected radio button from radioGroup
         int selectedYear = radioGroup.getCheckedRadioButtonId();
+
+        String year = "";
+
+
         // find the radiobutton by returned id
         radioButton = (RadioButton) findViewById(selectedYear);
 
-        String year = radioButton.getText().toString();
+        if (radioButton != null) { // make sure a button was selected before retreiving any information
 
-        userInfo.put("Class Year", year); // put the year in the hashmap containing user info
+            year = radioButton.getText().toString();
 
-        Log.i(TAG, "Inputted class year: " + year);
+            userInfo.put("Class Year", year); // put the year in the hashmap containing user info
+
+            Log.i(TAG, "Inputted class year: " + year);
+        }
 
         return year;
 
@@ -161,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
     public List<String> getCheckedTags() {
 
-        selectedTags = new ArrayList<>();
+        selectedTags = new ArrayList<>(); // a new list is created everytime the user clicks Done
         List<CheckBox> items = new ArrayList<CheckBox>();
 
         CheckBox foodCheckBox = (CheckBox) findViewById(R.id.checkBox1);

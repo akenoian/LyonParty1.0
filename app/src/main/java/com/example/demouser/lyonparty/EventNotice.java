@@ -11,6 +11,8 @@ import android.view.ViewParent;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Random;
+
 /**
  * EventNotice is the GUI representation of an event that will be on a list displayed on the app.
  * @author Jaemarie Solyst
@@ -38,12 +40,16 @@ public class EventNotice extends android.support.v7.widget.AppCompatTextView {
         + "\n" + "TIME: " +  event.getTime()
         + "\n" + "PLACE: " + event.getPlace());
 
-        //setTextAlignment(TEXT_ALIGNMENT_CENTER);
+
+        // set color of the Event notice
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        setBackgroundColor(color);
 
         setHeight(HEIGHT);
         setWidth(WIDTH);
         setTextSize(TEXT_SIZE);
-        setBackgroundColor(Color.rgb(255, 255, 200));
+        //setBackgroundColor(Color.rgb(255, 255, 200));
     }
 
     /**
@@ -53,5 +59,13 @@ public class EventNotice extends android.support.v7.widget.AppCompatTextView {
         setText(event.getHost()
                 + "\n" + "TIME: " +  event.getTime()
                 + "\n" + "PLACE: " + event.getPlace());
+    }
+
+    /**
+     * Get the associated event from the notice
+     * @return the event from the notice
+     */
+    public Event getEvent(){
+        return event;
     }
 }
