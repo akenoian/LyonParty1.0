@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         for (Map.Entry<String, List<Event>> entry : taggedEvents.entrySet()) {
-            Log.i("test", "key: " + entry.getKey() + "values: " + entry.getValue());
+            //Log.i("test", "key: " + entry.getKey() + "values: " + entry.getValue());
         }
 
     }
