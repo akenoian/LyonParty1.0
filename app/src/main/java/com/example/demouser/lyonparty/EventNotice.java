@@ -60,4 +60,12 @@ public class EventNotice extends android.support.v7.widget.AppCompatTextView {
                 + "\n" + "TIME: " +  event.getTime()
                 + "\n" + "PLACE: " + event.getPlace());
     }
+
+    /**
+     * Get the associated event from the notice
+     * @return the event from the notice
+     */
+    public Event getEvent(){
+        return event;
+    }
 }

@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createEvent();   //fill each list of the events bc they're hard coded for now
+        //createEvent();   //fill each list of the events bc they're hard coded for now
 
     }
 
