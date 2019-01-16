@@ -46,6 +46,19 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         // Create example events
         createExampleEvents();
 
+        // set up the RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.eventListView);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new MyRecyclerViewAdapter(this, notices);
+        adapter.setClickListener(this);
+        recyclerView.setAdapter(adapter);
+
+        // create division for events
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                layoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
+
     }
 
 
@@ -56,10 +69,15 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
         EventNotice clickedNotice = adapter.getItem(position);
         Event clickedEvent = clickedNotice.getEvent();
+
         //EventPage page = new EventPage(this, clickedEvent);
         Intent openEventPageIntent = new Intent(this, EventPage.class);
-        openEventPageIntent.putExtra("event", exampleEv1);
+
+        // for demo on Fri
+        openEventPageIntent.putExtra("event", clickedEvent);
+
         startActivity(openEventPageIntent);
+
 
     }
 
@@ -68,6 +86,7 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
      */
     public void createExampleEvents(){
         // example times
+        /**
         Time time1 = new Time(01,1,00);
         Time time2 = new Time(03, 49, 00);
         Time time3 = new Time(10, 30, 00);
@@ -89,7 +108,9 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         // Populate the recycler view with demo example events
         ArrayList<EventNotice> notices = new ArrayList<>();
         notices.add(notice1);
+        */
 
+        /**
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.eventListView);
         recyclerView.setLayoutManager(layoutManager);
@@ -101,6 +122,7 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
+         */
 
     }
 
@@ -157,18 +179,4 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-        //add an intent to open another activity that's just an xml of the event information
-        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
-
-        EventNotice clickedNotice = adapter.getItem(position);
-        Event clickedEvent = clickedNotice.getEvent();
-        //EventPage page = new EventPage(this, clickedEvent);
-        Intent openEventPageIntent = new Intent(this, EventPage.class);
-
-        startActivity(openEventPageIntent);
-
-
-    }
 }
