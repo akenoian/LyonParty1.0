@@ -1,6 +1,7 @@
 package com.example.demouser.lyonparty;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -30,6 +31,7 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
     public List<String> selectedTags = MainActivity.selectedTags;
     Set<EventNotice> noticesSet;
     List<EventNotice> notices;
+    private FloatingActionButton floatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,14 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         recyclerView.addItemDecoration(dividerItemDecoration);
 
 
+        floatingButton = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
+        floatingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SearchEvent.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -178,10 +188,11 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
     /**
      * This method is called when the Post Event button is clicked at the top of the screen.
+     *
      * @param view
      * @return
      */
-    public boolean onPostEvent(View view){
+    public boolean onPostEvent(View view) {
 
         //open the postEvent screen
         Intent intent = new Intent(this, PostEvent.class);
@@ -191,6 +202,5 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
         return true;
     }
-
 
 }

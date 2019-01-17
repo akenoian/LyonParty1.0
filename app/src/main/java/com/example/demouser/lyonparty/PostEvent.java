@@ -16,6 +16,7 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import android.widget.CheckBox;
 import android.widget.ToggleButton;
 
@@ -54,7 +55,9 @@ public class PostEvent extends AppCompatActivity {
      * All input text is saved into a new event object.
      * Event object is then saved into the hashmap depending on its tags.
      */
-    private Event createNewEvent () {
+    private Event createNewEvent() {
+
+
         EditText eventNameInput = findViewById(R.id.editText1);
         EditText hostInput = findViewById(R.id.editText2);
         EditText dateInput = findViewById(R.id.editText3);
@@ -97,54 +100,38 @@ public class PostEvent extends AppCompatActivity {
             }
         }
         Time time = new Time(t1, t2, t3);*/
-        Time time = new Time (12, 0, 0);
+        Time time = new Time(12, 0, 0);
 
 
         //make the list of tags based on buttons they chose
-        //TEMP
-        List<String> tags = new ArrayList<>();
-        tags.add(MainActivity.allTags.get(0));
-
+        List<String> tags = retrieveInfo();
         //make the new event!
-        Event newEvent = new Event (time, dateName, hostName, tags, eventName);
+        Event newEvent = new Event(time, dateName, hostName, tags, eventName);
+
+        MainActivity.allEvents.add(newEvent);
+
+        MainActivity.createTagHashMap();
+
+
 
         return newEvent;
     }
 
     /**
      * This method is called when the Post Event button is clicked at the top of the screen.
+     *
      * @param view
      * @return
      */
-    public boolean onDoneButton(View view){
+    public boolean onDoneButton(View view) {
         return true;
 
 
     }
 
-    /**
-     * This method is called when the Post button is clicked after the user has entered their event info.
-     * The event info should be saved and the new event should also be displayed when the Post Events screen pops up again.
-     *
-     * @param view
-     * @return
-     */
-//    public void onPost(View view) {
-//
-//        retrieveInfo();
-//
-//        //open the postEvent screen
-//        Intent intent = new Intent(this, SearchEvent.class);
-//
-//        //takes a string name and value
-//        startActivity(intent);  //new UI
-//
-//        //return true;
-//    }
-//
     public void onPostEvent(View view) {
 
-        retrieveInfo();
+        createNewEvent();
 
         //open the postEvent screen
         Intent intent = new Intent(this, SearchEvent.class);
@@ -158,7 +145,7 @@ public class PostEvent extends AppCompatActivity {
      * the hashmap containing all of the events (from the Main Activity). Then filterEvents from the
      * PostEvent class should be called to update the display.
      */
-    public void retrieveInfo() {
+    public List<String> retrieveInfo() {
 
         tagsSelected = new ArrayList<>(); // a new list is created everytime the user clicks Done
         List<CheckBox> items = new ArrayList<CheckBox>();
@@ -193,8 +180,7 @@ public class PostEvent extends AppCompatActivity {
 
         Log.i("test", "tags selected: " + tagsSelected);
 
-        //MainActivity.allEvents.add(new Event());
-
+        return tagsSelected;
     }
 
 }

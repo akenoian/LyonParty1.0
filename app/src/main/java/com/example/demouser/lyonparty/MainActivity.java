@@ -215,8 +215,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Build the hash map that maps tags to a list of events.
      */
-    public void createTagHashMap() {
-        createEvent();   //fill each list of the events bc they're hard coded for now
+    public static void createTagHashMap() {
+        //createEvent();   //fill each list of the events bc they're hard coded for now
         //puts the keys in (tags)
         for (int i = 0; i < allTags.size(); i++) {
             taggedEvents.put(allTags.get(i), new ArrayList<Event>());
@@ -236,10 +236,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void addNewEventToHashMap(Event event) {
-
-        allEvents.add(event);
-        createTagHashMap();
-
-    }
 }
