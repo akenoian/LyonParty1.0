@@ -30,6 +30,7 @@ public class PostEvent extends AppCompatActivity {
     //private SearchEvent searchEvent = new SearchEvent();
     //private ToggleButton tbutton1 = findViewById(R.id.toggleButtonTAG1);
     public static List<String> tagsSelected; // will hold the tags selected by user at registration
+   // public static List<Events> newEvents = new
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,10 +109,17 @@ public class PostEvent extends AppCompatActivity {
         //make the new event!
         Event newEvent = new Event(time, dateName, hostName, tags, eventName);
 
+
+        MainActivity.tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
+        MainActivity.tagsdemo2 = new ArrayList<>();
+        MainActivity.tagsdemo3 = new ArrayList<>();
+        MainActivity.tagsdemo4 = new ArrayList<>();
+        MainActivity.tagsdemo5 = new ArrayList<>();
+
+        MainActivity.allEvents = new ArrayList<>();
         MainActivity.allEvents.add(newEvent);
 
         MainActivity.createTagHashMap();
-
 
 
         return newEvent;
