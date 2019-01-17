@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void createEvent() {
 
+
+
         for (int i=0;i<allTags.size();i++) {    //only list with all tags
             tagsdemo1.add(allTags.get(i));      //should be in every event notice list
         }
