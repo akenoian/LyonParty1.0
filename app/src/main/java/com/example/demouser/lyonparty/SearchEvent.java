@@ -179,4 +179,21 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
     }
 
+    /**
+     * This method is called when the Post Event button is clicked at the top of the screen.
+     * @param view
+     * @return
+     */
+    public boolean onPostEvent(View view){
+
+
+        //open the postEvent screen
+        Intent intent = new Intent(this, PostEvent.class);
+
+        //takes a string name and value
+        startActivity(intent);  //new UI
+
+
+        return true;
+    }
 }

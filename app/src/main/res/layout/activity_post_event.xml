@@ -140,43 +140,79 @@
         android:ems="10"
         android:inputType="textMultiLine" />
 
-    <ToggleButton
-        android:id="@+id/toggleButtonTAG1"
-        android:layout_width="93dp"
-        android:layout_height="48dp"
+    <View
+        android:id="@+id/tagview"
+        android:layout_width="339dp"
+        android:layout_height="221dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="225dp"
-        android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@+id/editText3"
-        android:background="@drawable/ic_launcher_background"
-        android:text="free @string/free_coffee"
-        android:textOff="free coffee"
-        android:textOn="FREE COFFEE" />
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="271dp" />
 
-    <ToggleButton
-        android:id="@+id/toggleButtonTAG2"
-        android:layout_width="93dp"
-        android:layout_height="48dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="293dp"
-        android:layout_marginEnd="15dp"
-        android:layout_toStartOf="@+id/editText3"
-        android:background="@drawable/ic_launcher_background"
-        android:text="free @string/free_food"
-        android:textOff="free food"
-        android:textOn="FREE FOOD" />
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/regClassLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="209dp"
+        android:text="free food" />
 
-    <ToggleButton
-        android:id="@+id/toggleButtonTAG3"
-        android:layout_width="93dp"
-        android:layout_height="48dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="361dp"
-        android:layout_marginEnd="18dp"
-        android:layout_toStartOf="@+id/editText3"
-        android:background="@drawable/ic_launcher_background"
-        android:text="live @string/live_music"
-        android:textOff="live music"
-        android:textOn="LIVE MUSIC" />
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/regNameLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="177dp"
+        android:text="free coffee" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/regClassLabel"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="143dp"
+        android:text="drinks" />
+
+    <CheckBox
+        android:id="@+id/checkBox4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox3"
+        android:layout_alignStart="@+id/regNameLabel"
+        android:layout_marginTop="-143dp"
+        android:text="live music" />
+
+    <CheckBox
+        android:id="@+id/checkBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox4"
+        android:layout_alignStart="@+id/regClassLabel"
+        android:text="lecture" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/checkBox5"
+        android:layout_alignStart="@+id/regClassLabel"
+        android:text="political event" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/timeText"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="49dp"
+        android:onClick="onPostEvent"
+        android:text="Post" />
+
 
 </RelativeLayout>

@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     // hashmap that maps the tags to an array list of their coresponding events (one event can be listed under multiple tags)
     public static Map<String, List<Event>> taggedEvents = new HashMap<>();
-    private List<Event> allEvents = new ArrayList<>();
+    public static List<Event> allEvents = new ArrayList<>();
 
     Time time = new Time(1,1,1);
 
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         createTagHashMap(); //make the hashmap
-        Log.i(TAG, "check selected tags: " + selectedTags);
+
         return selectedTags;
     }
 
@@ -238,4 +238,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void addNewEventToHashMap(Event event) {
+
+        allEvents.add(event);
+        createTagHashMap();
+
+    }
 }
