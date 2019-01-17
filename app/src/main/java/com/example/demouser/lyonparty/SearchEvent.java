@@ -82,7 +82,7 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
     /**
      * BELOW HERE IS HARDCODED EVENT INFORMATION FOR DEMONSTRATION PURPOSES
      */
-    public void createExampleEvents(){
+    public void createExampleEvents() {
         // example times
         /**
          Time time1 = new Time(01,1,00);
@@ -127,9 +127,11 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
     @Override
     protected void onResume() {
         super.onResume();
+
         filterEvents();
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -189,7 +191,6 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
         return true;
     }
-
 
 
 }
