@@ -52,13 +52,22 @@ public class MainActivity extends AppCompatActivity {
      * fill their tags array lists with tags
      */
     public static void createEvent() {
-//        allEvents = new ArrayList<>();
-//
-//        tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
-//        tagsdemo2 = new ArrayList<>();
-//        tagsdemo3 = new ArrayList<>();
-//        tagsdemo4 = new ArrayList<>();
-//        tagsdemo5 = new ArrayList<>();
+        allEvents = new ArrayList<>();
+        allEvents.addAll(PostEvent.newEvents);
+      //  allTags = new ArrayList<String>();
+
+        tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
+        tagsdemo2 = new ArrayList<>();
+        tagsdemo3 = new ArrayList<>();
+        tagsdemo4 = new ArrayList<>();
+        tagsdemo5 = new ArrayList<>();
+
+//        tagsdemo1.clear();
+//        tagsdemo2.clear();
+//        tagsdemo3.clear();
+//        tagsdemo4.clear();
+//        tagsdemo5.clear();
+
 
 
 
@@ -137,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
 
             userInfo.put("Name", name); // put the name in the hashmap containing user info
 
-            Log.i(TAG, "Inputted name: " + name);
         }
 
         return name;
@@ -158,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
 
             userInfo.put("Email", email); // put the email in the hashmap containing user info
 
-            Log.i(TAG, "Inputted email: " + email);
         }
 
         return email;
@@ -184,7 +191,6 @@ public class MainActivity extends AppCompatActivity {
 
             userInfo.put("Class Year", year); // put the year in the hashmap containing user info
 
-            Log.i(TAG, "Inputted class year: " + year);
         }
 
         return year;
@@ -192,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public List<String> getCheckedTags() {
+        allTags = new ArrayList<String>();
 
         selectedTags = new ArrayList<>(); // a new list is created everytime the user clicks Done
         List<CheckBox> items = new ArrayList<CheckBox>();
@@ -244,12 +251,9 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 0; j<eventTags.size(); j++) {   //walk through them
                 taggedEvents.get(eventTags.get(j)).add(allEvents.get(i));  //add event to hashmap at value that matches key/tag
             }
-            Log.i("test", "hashmap: " + taggedEvents.get("free food").toString());
+
         }
 
-        for (Map.Entry<String, List<Event>> entry : taggedEvents.entrySet()) {
-            //Log.i("test", "key: " + entry.getKey() + "values: " + entry.getValue());
-        }
 
     }
 

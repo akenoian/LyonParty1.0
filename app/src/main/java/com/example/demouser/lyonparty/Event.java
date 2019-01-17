@@ -2,6 +2,7 @@ package com.example.demouser.lyonparty;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.sql.Time;
 import java.text.DateFormat;
@@ -132,6 +133,11 @@ public class Event implements Parcelable {
     }
 
     /**
+     * get the info
+     * @return info
+     */
+    public String getInfo() {return info;}
+    /**
      * get the tags as a string array
      * @return tags of the event as a String array
      */
@@ -178,7 +184,7 @@ public class Event implements Parcelable {
 
         // Get the time as a string first
         String timeString = in.readString();
-        //convert String to time
+        Log.i("test", "event timestring: " + timeString);      //convert String to time
         this.time = java.sql.Time.valueOf(timeString);
         this.info = in.readString();
     }

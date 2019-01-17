@@ -171,8 +171,7 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
         for (int j = 0; j < userEvents.size(); j++) {
             //EventNotice demo = new EventNotice(this, events.get(j));
             noticesSet.add(new EventNotice(this, userEvents.get(j)));
-            //Log.i("test", "set: " + noticesSet.get);
-            //Log.i("test", "event added: " + demo.getEvent());
+
 
 
         }

@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ToggleButton;
 
 import java.sql.Time;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -30,21 +31,16 @@ public class PostEvent extends AppCompatActivity {
     //private SearchEvent searchEvent = new SearchEvent();
     //private ToggleButton tbutton1 = findViewById(R.id.toggleButtonTAG1);
     public static List<String> tagsSelected; // will hold the tags selected by user at registration
-   // public static List<Events> newEvents = new
+    public static List<Event> newEvents = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_event);
-        Button doneButton = findViewById(R.id.doneButton);
 
-        createNewEvent();
-        Log.i("test", "eventhost" + createNewEvent().getHost());
-        Log.i("test", "eventtags" + createNewEvent().getTags());
-        Log.i("test", "eventdate" + createNewEvent().getDate());
-        Log.i("test", "eventname" + createNewEvent().getName());
-        Log.i("test", "eventtime" + createNewEvent().getTime());
+
+       // createNewEvent();
 
 
         //checks that all the fields have been filled by the time the user presses "done"
@@ -67,57 +63,40 @@ public class PostEvent extends AppCompatActivity {
 
         //edit texts that expect string inputs
         String eventName = eventNameInput.getText().toString();
-        Log.i("test", "event get name " + eventName);
+
         String hostName = hostInput.getText().toString();
-        Log.i("test", "event get host " + hostName);
+
         String dateName = dateInput.getText().toString();
-        Log.i("test", "event get date " + dateName);
+
         String infoName = infoInput.getText().toString();
 
+        String timeName = timeInput.getText().toString();
 
-        //convert time into a string, then an int, then parse that int into separate ints to put into Time object
-        /*String timeName = timeInput.getText().toString();
-        int timeParsed = Integer.parseInt(timeName);
-        //stack to hold the digits
-        List<Integer> stack = new ArrayList<Integer>();
-        while (timeParsed > 0) {
-            stack.add( timeParsed % 10 );
-            timeParsed = timeParsed / 10;
+        Time theTime = null;
+
+        try {
+            theTime = java.sql.Time.valueOf(timeName);
+        } catch (IllegalArgumentException e) {
+            theTime = new Time (12, 0, 0);
         }
-        //stack has all the separate digits
-        //walk through and save them to 3 integers
-        int t1=0;
-        int t2=0;
-        int t3=0;
-        for (int i = 0; i<stack.size(); i++){
-            if (i==0){
-                t1 = stack.get(i);
-            }
-            if (i==1){
-                t2 = stack.get(i);
-            }
-            if (i==2){
-                t3 = stack.get(i);
-            }
-        }
-        Time time = new Time(t1, t2, t3);*/
-        Time time = new Time(12, 0, 0);
+
+
 
 
         //make the list of tags based on buttons they chose
         List<String> tags = retrieveInfo();
         //make the new event!
-        Event newEvent = new Event(time, dateName, hostName, tags, eventName, infoName);
+        Event newEvent = new Event(theTime, dateName, hostName, tags, eventName, infoName);
+        newEvents.add(newEvent);
 
-
-        MainActivity.tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
+        MainActivity.tagsdemo1 = new ArrayList<>();    //resets all the stuff
         MainActivity.tagsdemo2 = new ArrayList<>();
         MainActivity.tagsdemo3 = new ArrayList<>();
         MainActivity.tagsdemo4 = new ArrayList<>();
         MainActivity.tagsdemo5 = new ArrayList<>();
-
         MainActivity.allEvents = new ArrayList<>();
-        MainActivity.allEvents.add(newEvent);
+        //add the new ones
+        MainActivity.allEvents.addAll(newEvents);
 
         MainActivity.createTagHashMap();
 
