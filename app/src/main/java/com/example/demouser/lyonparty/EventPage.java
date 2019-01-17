@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The EventPage is opened as an intent, which shows information about the event.
  * @author Jaemarie Solyst
@@ -50,8 +53,15 @@ public class EventPage extends AppCompatActivity {
         timeView.setText((event.getTime()).toString());
         placeView.setText(event.getDate());
         hostView.setText(event.getHost());
-        //tagView.setText(event.getTags());
 
+        // add tags to GUI display
+        String eventsString = "";
+        List<String> tags = event.getTags();
+
+        for (String tag : tags) {
+            eventsString = eventsString + " " + tag;
+        }
+        tagView.setText(eventsString);
 
     }
 }

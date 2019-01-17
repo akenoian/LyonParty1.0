@@ -67,18 +67,16 @@ public class MainActivity extends AppCompatActivity {
 
         tagsdemo5.add(allTags.get(5));
 
-        Event eventdemo1 = new Event(time, "Event place1", "event host1", tagsdemo1, "event name1" );
+        Event eventdemo1 = new Event(time, "5/10/19", "Mary Lyon", tagsdemo1, "Mary's Graduation Party" );
         allEvents.add(eventdemo1);
-        Event eventdemo2 = new Event(time, "Event place2", "event host2", tagsdemo2, "event name2" );
+        Event eventdemo2 = new Event(time, "2/3/19", "Political Society", tagsdemo2, "Upcoming Elections Discussion" );
         allEvents.add(eventdemo2);
-        Event eventdemo3 = new Event(time, "Event place3", "event host3", tagsdemo3, "event name3" );
+        Event eventdemo3 = new Event(time, "4/3/19", "Jenny Graham", tagsdemo3, "Thrift my room!" );
         allEvents.add(eventdemo3);
-        Event eventdemo4 = new Event(time, "Event place4", "event host4", tagsdemo4, "event name4" );
+        Event eventdemo4 = new Event(time, "2/15/19", "Nicki Minaj", tagsdemo4, "Lunch with Nicki Minaj" );
         allEvents.add(eventdemo4);
-        Event eventdemo5 = new Event(time, "Event place5", "event host5", tagsdemo5, "event name5" );
+        Event eventdemo5 = new Event(time, "3/4/19", "Holyoke Hikers", tagsdemo5, "Hiking Outing" );
         allEvents.add(eventdemo5);
-
-
 
     }
 
@@ -100,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
         //open the postEvent screen
         Intent intent = new Intent(this, SearchEvent.class);
+        
         //takes a string name and value
         startActivity(intent);  //new UI
 
