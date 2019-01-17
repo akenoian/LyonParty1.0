@@ -23,6 +23,7 @@ public class Event implements Parcelable {
     private String name;
     private List<String> tags;
     private Time time;
+    private String info;
 
     /**
      * Constructor to create an Event object. Do not pass in null for any of these objects.
@@ -32,13 +33,14 @@ public class Event implements Parcelable {
      * @param tags what the tags are of the event
      * @param name what the event is called
      */
-    public Event(Time time, String date, String host, List<String> tags, String name){
+    public Event(Time time, String date, String host, List<String> tags, String name, String info){
         // save the params as global
         this.time = time;
         this.date = date;
         this.host = host;
         this.tags = tags;
         this.name = name;
+        this.info = info;
     }
 
     /**
@@ -71,6 +73,14 @@ public class Event implements Parcelable {
      */
     public void changeHost(String newHost){
         this.name = newHost;
+    }
+
+    /**
+     * update the info of an event
+     * @param newInfo
+     */
+    public void changeInfo(String newInfo){
+        this.info = newInfo;
     }
 
     /**
@@ -151,6 +161,7 @@ public class Event implements Parcelable {
         dest.writeString(name);
         dest.writeStringList(tags);
         dest.writeString(time.toString());
+        dest.writeString(info);
     }
 
     /**
@@ -169,6 +180,7 @@ public class Event implements Parcelable {
         String timeString = in.readString();
         //convert String to time
         this.time = java.sql.Time.valueOf(timeString);
+        this.info = in.readString();
     }
 
     /**
