@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup; // group of buttons that provide choices for class year
     private RadioButton radioButton;
     public static List<String> selectedTags; // will hold the tags selected by user at registration
-    public List<String> allTags = new ArrayList<>(); // holds all the tags provided to the user upon registration
+    public static List<String> allTags = new ArrayList<>(); // holds all the tags provided to the user upon registration
 
     // hashmap that maps the tags to an array list of their coresponding events (one event can be listed under multiple tags)
     public static Map<String, List<Event>> taggedEvents = new HashMap<>();
@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //createEvent();   //fill each list of the events bc they're hard coded for now
 
     }
 

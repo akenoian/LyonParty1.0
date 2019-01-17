@@ -39,9 +39,11 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
         filterEvents();
 
-
         // instantiate layout manager
         layoutManager = new LinearLayoutManager(this);
+
+        // Create example events
+        createExampleEvents();
 
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.eventListView);
@@ -57,7 +59,6 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
 
     }
-
 
     @Override
     public void onItemClick(View view, int position) {
@@ -77,4 +78,118 @@ public class SearchEvent extends AppCompatActivity implements MyRecyclerViewAdap
 
 
     }
+
+    /**
+     * BELOW HERE IS HARDCODED EVENT INFORMATION FOR DEMONSTRATION PURPOSES
+     */
+    public void createExampleEvents(){
+        // example times
+        /**
+         Time time1 = new Time(01,1,00);
+         Time time2 = new Time(03, 49, 00);
+         Time time3 = new Time(10, 30, 00);
+
+         // example tags
+         ArrayList<String> tags1 = new ArrayList<>();
+         ArrayList<String> tags2 = new ArrayList<>();
+         ArrayList<String> tags3 = new ArrayList<>();
+
+
+         tags1.add("free food");
+         tags1. add("wild part");
+
+         // Example 1: Mary's Party
+         exampleEv1 = new Event(time1, "Rockies 304", "Mary Lyon", tags1, "Mary's Wild Graduation" );
+         EventNotice notice1 = new EventNotice(this, exampleEv1);
+
+
+         // Populate the recycler view with demo example events
+         ArrayList<EventNotice> notices = new ArrayList<>();
+         notices.add(notice1);
+         */
+
+        /**
+         // set up the RecyclerView
+         RecyclerView recyclerView = findViewById(R.id.eventListView);
+         recyclerView.setLayoutManager(layoutManager);
+         adapter = new MyRecyclerViewAdapter(this, notices);
+         adapter.setClickListener(this);
+         recyclerView.setAdapter(adapter);
+
+         // create division for events
+         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+         layoutManager.getOrientation());
+         recyclerView.addItemDecoration(dividerItemDecoration);
+         */
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        filterEvents();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        noticesSet = new HashSet<>();
+        notices = new ArrayList<>();
+
+    }
+
+    public void filterEvents() {
+
+        noticesSet = new HashSet<>();
+        notices = new ArrayList<>();
+
+        List<Event> userEvents = new ArrayList<>();
+
+        for (int i = 0; i < selectedTags.size(); i++) {
+            List<Event> events = MainActivity.taggedEvents.get(selectedTags.get(i));
+            for (int j = 0; j < events.size(); j++) {
+                if (!userEvents.contains(events.get(j))) {
+                    userEvents.add(events.get(j));
+                }
+            }
+        }
+
+        for (int j = 0; j < userEvents.size(); j++) {
+            //EventNotice demo = new EventNotice(this, events.get(j));
+            noticesSet.add(new EventNotice(this, userEvents.get(j)));
+            //Log.i("test", "set: " + noticesSet.get);
+            //Log.i("test", "event added: " + demo.getEvent());
+
+
+        }
+
+
+        Iterator<EventNotice> it = noticesSet.iterator();
+        while (it.hasNext()) {
+            notices.add(it.next());
+
+        }
+
+    }
+
+    /**
+     * This method is called when the Post Event button is clicked at the top of the screen.
+     * @param view
+     * @return
+     */
+    public boolean onPostEvent(View view){
+
+        //open the postEvent screen
+        Intent intent = new Intent(this, PostEvent.class);
+
+        //takes a string name and value
+        startActivity(intent);  //new UI
+
+        return true;
+    }
+
+
+
 }

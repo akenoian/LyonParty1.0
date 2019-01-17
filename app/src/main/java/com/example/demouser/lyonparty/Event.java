@@ -18,7 +18,7 @@ import java.util.List;
 public class Event implements Parcelable {
 
     // event information that can be changed or accessed later
-    private String place;
+    private String date;
     private String host;
     private String name;
     private List<String> tags;
@@ -27,15 +27,15 @@ public class Event implements Parcelable {
     /**
      * Constructor to create an Event object. Do not pass in null for any of these objects.
      * @param time initial time of the event
-     * @param place where the event will take place
+     * @param date where the event will take place
      * @param host host of the event
      * @param tags what the tags are of the event
      * @param name what the event is called
      */
-    public Event(Time time, String place, String host, List<String> tags, String name){
+    public Event(Time time, String date, String host, List<String> tags, String name){
         // save the params as global
         this.time = time;
-        this.place = place;
+        this.date = date;
         this.host = host;
         this.tags = tags;
         this.name = name;
@@ -59,10 +59,10 @@ public class Event implements Parcelable {
 
     /**
      * Change the place of the event
-     * @param newPlace new place of the event
+     * @param newDate new place of the event
      */
-    public void changePlace(String newPlace){
-        this.place = newPlace;
+    public void changeDate(String newDate){
+        this.date = newDate;
     }
 
     /**
@@ -109,8 +109,8 @@ public class Event implements Parcelable {
      * get the place of the event
      * @return event place
      */
-    public String getPlace(){
-        return place;
+    public String getDate(){
+        return date;
     }
 
     /**
@@ -146,7 +146,7 @@ public class Event implements Parcelable {
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(place);
+        dest.writeString(date);
         dest.writeString(host);
         dest.writeString(name);
         dest.writeStringList(tags);
@@ -160,7 +160,7 @@ public class Event implements Parcelable {
      **/
     private Event(Parcel in){
         // get global vars of an event
-        this.place = in.readString();
+        this.date = in.readString();
         this.host = in.readString();
         this.name = in.readString();
         this.tags = in.createStringArrayList();

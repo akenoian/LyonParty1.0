@@ -48,7 +48,7 @@ public class EventPage extends AppCompatActivity {
         // update the GUI components with the event information
         nameView.setText(event.getName());
         timeView.setText((event.getTime()).toString());
-        placeView.setText(event.getPlace());
+        placeView.setText(event.getDate());
         hostView.setText(event.getHost());
         //tagView.setText(event.getTags());
 
