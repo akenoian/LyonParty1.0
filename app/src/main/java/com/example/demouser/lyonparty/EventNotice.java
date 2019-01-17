@@ -36,9 +36,9 @@ public class EventNotice extends android.support.v7.widget.AppCompatTextView {
         //save event as global
         super(context);
         this.event = event;
-        setText(event.getHost()
+        setText(event.getName()
         + "\n" + "TIME: " +  event.getTime()
-        + "\n" + "PLACE: " + event.getDate());
+        + "\n" + "DATE: " + event.getDate());
 
 
         // set color of the Event notice
@@ -56,9 +56,9 @@ public class EventNotice extends android.support.v7.widget.AppCompatTextView {
      * pull info from event once it has been updated to display as text
      */
     public void updateInfo(){
-        setText(event.getHost()
+        setText(event.getName()
                 + "\n" + "TIME: " +  event.getTime()
-                + "\n" + "PLACE: " + event.getDate());
+                + "\n" + "DATE: " + event.getDate());
     }
 
     /**
