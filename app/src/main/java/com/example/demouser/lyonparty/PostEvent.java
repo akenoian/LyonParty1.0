@@ -106,7 +106,7 @@ public class PostEvent extends AppCompatActivity {
         //make the list of tags based on buttons they chose
         List<String> tags = retrieveInfo();
         //make the new event!
-        Event newEvent = new Event(time, dateName, hostName, tags, eventName);
+        Event newEvent = new Event(time, dateName, hostName, tags, eventName, infoName);
 
         MainActivity.allEvents.add(newEvent);
 
