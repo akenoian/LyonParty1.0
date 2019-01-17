@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
     public static Map<String, List<Event>> taggedEvents = new HashMap<>();
     public static List<Event> allEvents = new ArrayList<>();
 
-    Time time = new Time(1,1,1);
+    static Time time = new Time(1,1,1);
 
-    ArrayList<String> tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
-    ArrayList<String> tagsdemo2 = new ArrayList<>();
-    ArrayList<String> tagsdemo3 = new ArrayList<>();
-    ArrayList<String> tagsdemo4 = new ArrayList<>();
-    ArrayList<String> tagsdemo5 = new ArrayList<>();
+    static ArrayList<String> tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
+    static ArrayList<String> tagsdemo2 = new ArrayList<>();
+    static ArrayList<String> tagsdemo3 = new ArrayList<>();
+    static ArrayList<String> tagsdemo4 = new ArrayList<>();
+    static ArrayList<String> tagsdemo5 = new ArrayList<>();
 
 
     @Override
@@ -51,7 +51,14 @@ public class MainActivity extends AppCompatActivity {
      * hard code events for testing purposes
      * fill their tags array lists with tags
      */
-    private void createEvent() {
+    public static void createEvent() {
+//        allEvents = new ArrayList<>();
+//
+//        tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
+//        tagsdemo2 = new ArrayList<>();
+//        tagsdemo3 = new ArrayList<>();
+//        tagsdemo4 = new ArrayList<>();
+//        tagsdemo5 = new ArrayList<>();
 
         for (int i=0;i<allTags.size();i++) {    //only list with all tags
             tagsdemo1.add(allTags.get(i));      //should be in every event notice list
@@ -215,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
      * Build the hash map that maps tags to a list of events.
      */
     public static void createTagHashMap() {
-        //createEvent();   //fill each list of the events bc they're hard coded for now
+        createEvent();   //fill each list of the events bc they're hard coded for now
         //puts the keys in (tags)
         for (int i = 0; i < allTags.size(); i++) {
             taggedEvents.put(allTags.get(i), new ArrayList<Event>());
