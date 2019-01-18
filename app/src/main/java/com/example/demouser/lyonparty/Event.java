@@ -104,8 +104,7 @@ public class Event implements Parcelable {
      * get the name of the event
      * @return event name
      */
-    public String getName(){
-        return name;
+    public String getName(){ return name;
     }
 
     /**

@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     public static Map<String, List<Event>> taggedEvents = new HashMap<>();
     public static List<Event> allEvents = new ArrayList<>();
 
-    static Time time = new Time(1,1,1);
 
     static ArrayList<String> tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
     static ArrayList<String> tagsdemo2 = new ArrayList<>();
@@ -54,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
     public static void createEvent() {
         allEvents = new ArrayList<>();
         allEvents.addAll(PostEvent.newEvents);
-      //  allTags = new ArrayList<String>();
 
         tagsdemo1 = new ArrayList<>();    //lists for the hard coded events
         tagsdemo2 = new ArrayList<>();
@@ -62,12 +60,11 @@ public class MainActivity extends AppCompatActivity {
         tagsdemo4 = new ArrayList<>();
         tagsdemo5 = new ArrayList<>();
 
-//        tagsdemo1.clear();
-//        tagsdemo2.clear();
-//        tagsdemo3.clear();
-//        tagsdemo4.clear();
-//        tagsdemo5.clear();
-
+        Time time1 = new Time(1,15,00);
+        Time time2 = new Time(12,00,00);
+        Time time3 = new Time(4,30,00);
+        Time time4 = new Time(3,00,00);
+        Time time5 = new Time(12,45,00);
 
 
 
@@ -85,22 +82,22 @@ public class MainActivity extends AppCompatActivity {
 
         tagsdemo5.add(allTags.get(5));
 
-        Event eventdemo1 = new Event(time, "5/10/19", "Mary Lyon", tagsdemo1, "Mary's Graduation Party",
+        Event eventdemo1 = new Event(time1, "5/10/19", "Mary Lyon", tagsdemo1, "Mary's Graduation Party",
                 "Join me for my graudation party on May 10th in my room at Rockies 304. There will be pizza, soda, and " +
                         "rocking music! Invite your friends as well!");
         allEvents.add(eventdemo1);
-        Event eventdemo2 = new Event(time, "2/3/19", "Political Society", tagsdemo2, "Upcoming Elections Discussion",
+        Event eventdemo2 = new Event(time2, "2/3/19", "Political Society", tagsdemo2, "Upcoming Elections Discussion",
                 "We are going to have a discussion about the upcoming elections for Massachusetts senator. Join us to learn about " +
                         "who's running and what policies they plan to implement. We're meeting in the Shattuck lounge.");
         allEvents.add(eventdemo2);
-        Event eventdemo3 = new Event(time, "4/3/19", "Jenny Graham", tagsdemo3, "Thrift my room!",
+        Event eventdemo3 = new Event(time3, "4/3/19", "Jenny Graham", tagsdemo3, "Thrift my room!",
                 "Hi everyone. I have a lot of clothes and furniture! Going abroad next semester, and I'm looking to sell most of" +
                         " my stuff! Name your price, and we can haggle! Come to my room in Safford 202.");
         allEvents.add(eventdemo3);
-        Event eventdemo4 = new Event(time, "2/15/19", "Nicki Minaj", tagsdemo4, "Lunch with Nicki Minaj",
+        Event eventdemo4 = new Event(time4, "2/15/19", "Nicki Minaj", tagsdemo4, "Lunch with Nicki Minaj",
                 "AWHH. Join me for lunch in Blanchard. On me. #starshipsWereMeantToFly");
         allEvents.add(eventdemo4);
-        Event eventdemo5 = new Event(time, "3/4/19", "Holyoke Hikers", tagsdemo5, "Hiking Outing",
+        Event eventdemo5 = new Event(time5, "3/4/19", "Holyoke Hikers", tagsdemo5, "Hiking Outing",
                 "We are planning to go up a mountain. This hike will be intense, so bring your hiking boots! Newbie hikers welcome." +
                         "We are departing from Blanchard bus stop!");
         allEvents.add(eventdemo5);

@@ -14,11 +14,16 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
         android:clickable="true"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/bitalex"
+        android:visibility="visible"
+        app:fabSize="normal"
+        app:maxImageSize="40dp"
+        app:rippleColor="@color/colorPrimary"
+        tools:src="@drawable/bitalex" />
 
     <Button
         android:id="@+id/button"
@@ -48,7 +53,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/eventListView"
         android:layout_width="358dp"
-        android:layout_height="417dp"
+        android:layout_height="422dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="13dp"

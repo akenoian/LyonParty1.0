@@ -22,6 +22,7 @@
 
     <TextView
         android:id="@+id/infoText"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="284dp"
         android:layout_height="190dp"
         android:layout_alignParentTop="true"
@@ -31,23 +32,25 @@
 
     <TextView
         android:id="@+id/textViewLabel6"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-3dp"
-        android:layout_marginTop="444dp"
+        android:layout_marginTop="384dp"
         android:text="Tags:" />
 
     <TextView
         android:id="@+id/eventNameText"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="10dp"
         android:text="name of event here" />
 
     <TextView
@@ -57,8 +60,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="57dp"
-        android:layout_marginLeft="57dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
         android:layout_marginTop="168dp"
         android:text="host here" />
 
@@ -69,13 +72,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="190dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="192dp"
         android:text="place here" />
 
     <TextView
         android:id="@+id/hostInfo2"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -88,13 +92,14 @@
 
     <TextView
         android:id="@+id/timelabel"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="168dp"
-        android:layout_marginLeft="168dp"
+        android:layout_marginStart="171dp"
+        android:layout_marginLeft="171dp"
         android:layout_marginTop="169dp"
         android:text="Time:" />
 
@@ -105,13 +110,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="209dp"
-        android:layout_marginLeft="209dp"
-        android:layout_marginTop="169dp"
+        android:layout_marginStart="225dp"
+        android:layout_marginLeft="225dp"
+        android:layout_marginTop="172dp"
         android:text="date here" />
 
     <TextView
         android:id="@+id/hostInfo3"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -129,8 +135,9 @@
         android:layout_below="@+id/textViewLabel6"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="-18dp"
         android:text="tags go here" />
 
 </RelativeLayout>

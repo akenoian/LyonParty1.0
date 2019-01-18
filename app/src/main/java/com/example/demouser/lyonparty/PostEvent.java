@@ -39,13 +39,6 @@ public class PostEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_event);
 
-
-       // createNewEvent();
-
-
-        //checks that all the fields have been filled by the time the user presses "done"
-        //when done button is pressed, call createNewEvent method
-        //insert the returned method to allEvents list, recall filter events
     }
 
     /**

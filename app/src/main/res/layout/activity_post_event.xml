@@ -9,61 +9,67 @@
 
     <ImageView
         android:id="@+id/eventPicture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="106dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="21dp"
-        app:srcCompat="@mipmap/ic_launcher" />
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="9dp"
+        android:src="@drawable/babydroid"
+        app:srcCompat="@drawable/babydroid" />
 
     <TextView
         android:id="@+id/textViewLabel1"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/eventPicture"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="107dp"
-        android:layout_marginLeft="107dp"
+        android:layout_marginStart="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginTop="5dp"
         android:text="Event Name: " />
 
     <TextView
         android:id="@+id/textViewLabel2"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/eventPicture"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginTop="39dp"
         android:text="Host:" />
 
     <TextView
         android:id="@+id/textViewLabel3"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textViewLabel2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="37dp"
         android:text="Date:" />
 
     <TextView
         android:id="@+id/textViewLabel4"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/textViewLabel2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="245dp"
-        android:layout_marginLeft="245dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginLeft="212dp"
+        android:layout_marginTop="36dp"
         android:text="Time:" />
 
     <EditText
@@ -90,12 +96,12 @@
 
     <EditText
         android:id="@+id/editText3"
-        android:layout_width="91dp"
+        android:layout_width="66dp"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textViewLabel4"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="60dp"
         android:ems="10"
         android:inputType="date" />
 
@@ -114,21 +120,24 @@
 
     <TextView
         android:id="@+id/textViewLabel5"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/eventPicture"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="137dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="129dp"
         android:text="Info: " />
 
     <TextView
         android:id="@+id/textViewLabel6"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/eventPicture"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="182dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="225dp"
         android:text="Tags:" />
 
     <EditText
@@ -137,19 +146,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/timeText"
         android:layout_alignEnd="@+id/textViewLabel4"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="-82dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="-92dp"
         android:ems="10"
         android:inputType="textMultiLine" />
-
-    <View
-        android:id="@+id/tagview"
-        android:layout_width="339dp"
-        android:layout_height="221dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="271dp" />
 
     <CheckBox
         android:id="@+id/checkBox1"
@@ -203,6 +203,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/checkBox5"
         android:layout_alignStart="@+id/regClassLabel"
+        android:layout_marginTop="-2dp"
         android:text="political event" />
 
     <Button
@@ -212,7 +213,7 @@
         android:layout_alignEnd="@+id/timeText"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="49dp"
+        android:layout_marginBottom="47dp"
         android:onClick="onPostEvent"
         android:text="Post" />
 
